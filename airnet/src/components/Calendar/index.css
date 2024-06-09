@@ -1,0 +1,156 @@
+/* Блок calendar */
+.calendar {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Элемент header */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px 5px 0 0;
+}
+
+.calendar-header button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.calendar-header .month-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+.calendar__weekdays .weekday {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #f2f2f2;
+}
+
+.calendar__grid .day--weekend {
+  background-color: #ff8a8a;
+}
+
+.calendar__grid .day--holiday {
+  background-color: #ffd9b3;
+}
+
+.calendar__grid .day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+	padding-top: 40px;
+  cursor: pointer;
+	height: 100px;
+	overflow-y: auto;
+}
+
+.calendar__grid .empty-day {
+  background-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .calendar {
+    max-width: 100%;
+  }
+
+  .calendar__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar__header .month-name {
+    margin-bottom: 5px;
+  }
+}
+
+.day {
+	position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+	padding-top: 40px;
+	
+}
+
+:hover.day {
+	background-color: #ffd9b3;
+}
+.day--weekend {
+  background-color: #e0e0e0;
+}
+
+.day--holiday {
+  background-color: #ffd9b3;
+}
+
+.day__tasks {
+  margin-top: 5px;
+}
+
+.day__task {
+  background-color: #f2f2f2;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.day__task--completed {
+	padding: 2px 5px;
+  background-color: #d4edda;
+	border-radius: 3px;
+  color: #155724;
+}
+
+.day__task--incomplete {
+	padding: 2px 5px;
+  background-color: #f8d7da;
+	border-radius: 3px;
+  color: #721c24;
+}
+
+.day__number {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	font-size: small;
+}
+
+.day__tasks_incomplete_count {
+	position: absolute;
+	top: 5px;
+	right: 50%;
+	font-size: small;
+}
+
+.day__tasks_complete_count {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: small;
+}
